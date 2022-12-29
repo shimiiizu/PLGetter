@@ -23,7 +23,10 @@ df = pd.read_sql(sql, conn)
 print(df.columns)
 
 # 銘柄コードで抽出(Announcement_dateでソート)
-df_select = df[df['Code'] == 6196].sort_values('Announcement_date')
+
+# codeを指定
+code = 6196
+df_select = df[df['Code'] == code].sort_values('Announcement_date')
 
 print(df_select['Announcement_date'])
 print(df_select['Sales'])
